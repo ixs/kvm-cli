@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import bs4 as BeautifulSoup
 import collections
@@ -62,17 +62,15 @@ userid = urlparse.parse_qs(urllib3.util.parse_url(r.url).query)['userid'][0]
 # Parse our available hosts and their IDs
 soup = BeautifulSoup.BeautifulSoup(r.text, 'html.parser')
 devices = {}
-i = 1
 for item in soup.find(id='progressContent').find_all('table')[2].find('table').find_all('tr')[1:]:
-  index = i
-  i += 1
 
   name = item.find_all('span')[1].text
-  devices[name.lower()] = {'idx': index,
+  devices[name.lower()] = {'idx': None,
                    'intf': item.find_all('span')[2].text,
                    'state': item.find_all('span')[3].text,
                    'device_url': item.find_all('a')[0].attrs.get('href', None),
                    'action_url': item.find_all('a')[1].attrs.get('href', None)}
+  devices[name.lower()]['idx'] = int(urlparse.parse_qs(devices[name.lower()]['device_url'])['index'][0])
 
 # Bail if the system is not found
 assert(syst in devices)

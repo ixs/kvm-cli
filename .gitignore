@@ -102,3 +102,8 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# KVM Temp files
+Avocent/
+java.security
+viewer.jnlp
