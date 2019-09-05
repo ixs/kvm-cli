@@ -31,7 +31,7 @@ Supported systems
 | Supermicro | x8 Series    | kvm_x8.py       | Incomplete           |
 | Supermicro | x9 Series    | kvm_x9.py       | Planned              |
 | Supermicro | x10 Series   | kvm_x10.py      | Planned              |
-| StorageTek | L20/40/80    | stateus_stk.py  | In progress          |
+| StorageTek | L20/40/80    | status_stk.py   | Tested on a STK L40  |
 
 Requirements
 ============
