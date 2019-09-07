@@ -1,10 +1,11 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import Crypto.Hash
 import Crypto.Hash.HMAC
 import Crypto.Hash.SHA512
 import Crypto.Random
 import Crypto.Cipher
+import Crypto.Cipher.AES
 import base64
 import collections
 import hashlib

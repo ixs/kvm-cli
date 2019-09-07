@@ -28,8 +28,8 @@ Supported systems
 | Avocent    | DSR Series   | kvm_avocent.py  | Tested on a DSR8032  |
 | Cisco      | UCS C-Series | kvm_cimc.py     | Tested on a C22 M3   |
 | Supermicro | x7 Series    | kvm_x7.py       | Tested on a SIMLP-3+ |
-| Supermicro | x8 Series    | kvm_x8.py       | Incomplete           |
-| Supermicro | x9 Series    | kvm_x9.py       | Planned              |
+| Supermicro | x8 Series    | kvm_x8.py       | Complete             |
+| Supermicro | x9 Series    | kvm_x9.py       | Supported by x8      |
 | Supermicro | x10 Series   | kvm_x10.py      | Planned              |
 | StorageTek | L20/40/80    | status_stk.py   | Tested on a STK L40  |
 

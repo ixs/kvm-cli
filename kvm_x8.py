@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python
 
 import collections
 import os
@@ -38,18 +38,15 @@ assert('Please Login' not in r.text)
 
 # Fetch the main menu
 data = collections.OrderedDict([('url_name', 'mainmenu')])
-r = s.get('https://%s/cgi/url_redirect.cgi' % (host,), data=data, headers={'Referer': 'https://%s/login.cgi' % (host,)})
+r = s.get('https://%s/cgi/url_redirect.cgi' % (host,), params=data, headers={'Referer': 'https://%s/login.cgi' % (host,)})
 
 # Fetch the KVM page
 data = collections.OrderedDict([('url_name', 'man_ikvm')])
-r = s.get('https://%s/cgi/url_redirect.cgi' % (host,), data=data, headers={'Referer': 'https://%s/cgi/url_redirect.cgi?url_name=topmenu' % (host,)})
+r = s.get('https://%s/cgi/url_redirect.cgi' % (host,), params=data, headers={'Referer': 'https://%s/cgi/url_redirect.cgi?url_name=topmenu' % (host,)})
 
 # Download viewer
 data = collections.OrderedDict([('url_name', 'ikvm'), ('url_type', 'jwsk')])
-print data
-r = s.get('https://%s/cgi/url_redirect.cgi' % (host,), data=data, headers={'Referer': 'https://%s/cgi/url_redirect.cgi?url_name=man_ikvm' % (host,)})
-print r.request.headers
-print r.request.body
+r = s.get('https://%s/cgi/url_redirect.cgi' % (host,), params=data, headers={'Referer': 'https://%s/cgi/url_redirect.cgi?url_name=man_ikvm' % (host,)})
 with open('viewer.jnlp', 'w') as f:
   f.write(r.text)
 
