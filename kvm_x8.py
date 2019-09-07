@@ -35,6 +35,7 @@ r = s.post('https://%s/cgi/login.cgi' % (host,), headers={'Referer': 'https://%s
 
 # Verify we correctly authenticated
 assert('Please Login' not in r.text)
+assert('lang.LANG_LOGIN_PROMPT' not in r.text)
 
 # Fetch the main menu
 data = collections.OrderedDict([('url_name', 'mainmenu')])
