@@ -1,0 +1,4 @@
+PyCrypto
+requests
+xmltodict
+python-simplexml
