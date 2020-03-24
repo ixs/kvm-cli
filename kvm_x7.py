@@ -98,7 +98,7 @@ with open('java.policy', 'w') as f:
 redirect = subprocess.Popen(['socat', 'TCP-LISTEN:%s,fork,reuseaddr' % (redir_port,), 'TCP:%s:%s' % (host, orig_port)])
 
 # Start javaws viewer
-subprocess.call(['appletviewer', '-J-Djava.security.properties=java.security', '-J-Djava.security.policy=applet.policy', 'viewer.html'])
+subprocess.call(['appletviewer', '-J-Djava.security.properties=java.security', '-J-Djava.security.policy=java.policy', 'viewer.html'])
 
 # Stop port redirection
 redirect.kill()
