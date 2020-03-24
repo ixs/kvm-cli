@@ -48,7 +48,7 @@ redir_port = 4443
 
 params = {'REAL_HOST': host,
           'HOTKEYNAME_0': 'Ctrl+Alt+Delete',
-          'SOFTKBD_MAPPING': False,
+          'SOFTKBD_MAPPING': 'en',
           'EXCLUSIVE_MOUSE': False,
           'LOCAL_CURSOR': False,
           'PORT': redir_port,
