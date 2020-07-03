@@ -123,7 +123,7 @@ jdk.tls.legacyAlgorithms= \
 subprocess.call(['javaws', '-J-Djava.security.properties=java.security', '-wait', 'viewer.jnlp'])
 
 # Remove our temporary files
-#os.remove('viewer.jnlp')
+os.remove('viewer.jnlp')
 os.remove('java.security')
 
 # Logout
