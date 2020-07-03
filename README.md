@@ -27,7 +27,7 @@ Supported systems
 |------------|------------------|-----------------------|----------------------|
 | Avocent    | DSR Series       | kvm_avocent.py        | Tested on a DSR8032  |
 | Cisco      | UCS C-Series     | kvm_cimc.py           | Tested on a C22 M3   |
-| HP         | Gen1 Microserver | kvm_hp_microserver.py | Tested on a SIMLP-3+ |
+| HP         | Gen1 Microserver | kvm_hp_microserver.py | Tested on a N36L     |
 | Supermicro | x7 Series        | kvm_x7.py             | Tested on a SIMLP-3+ |
 | Supermicro | x8 Series        | kvm_x8.py             | Complete             |
 | Supermicro | x9 Series        | kvm_x9.py             | Supported by x8      |
