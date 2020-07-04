@@ -1,4 +1,5 @@
 PyCrypto
+bs4
 requests
-xmltodict
 python-simplexml
+urllib3

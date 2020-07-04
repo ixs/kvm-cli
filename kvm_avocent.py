@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import bs4 as BeautifulSoup
 import collections
@@ -9,7 +9,7 @@ import shutil
 import subprocess
 import sys
 import time
-import urlparse
+import urllib.parse as urlparse
 import urllib3
 
 if len(sys.argv) != 5:

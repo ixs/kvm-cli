@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import Crypto.Hash
 import Crypto.Hash.HMAC
@@ -31,15 +31,17 @@ BLOCK_SIZE = 16
 
 def keyFnv32(data):
     n = 40389
-    for i in range(0, len(data) / 4):
+    for i in range(int(len(data) / 4)):
         n = n ^ ord(data[i])
         n = n + (n << 1)
     return n
 
 
 def hashFnv32(message, key):
-    '''session id, url'''
-    kmsg = str(keyFnv32(message))
+    """session id, url"""
+    kmsg = keyFnv32(message)
+    kmsg = str(kmsg).encode("ascii")
+    key = key.encode("utf-8")
     signed = hmac.new(kmsg, key, hashlib.sha512)
     return signed.hexdigest()
 
@@ -47,7 +49,7 @@ def hashFnv32(message, key):
 def bytes_to_key(data, salt, output=48):
     # extended from https://gist.github.com/gsakkis/4546068
     assert len(salt) == 8, len(salt)
-    data += salt
+    data = bytes(data, encoding="utf-8") + salt
     key = hashlib.md5(data).digest()
     final_key = key
     while len(final_key) < output:
@@ -58,8 +60,7 @@ def bytes_to_key(data, salt, output=48):
 
 def pad(data):
     length = BLOCK_SIZE - (len(data) % BLOCK_SIZE)
-    return data + (chr(length)*length).encode()
-
+    return data.encode("utf-8") + (chr(length) * length).encode()
 
 def encrypt(message, passphrase):
     salt = Crypto.Random.new().read(8)
