@@ -106,5 +106,8 @@ site
 # KVM Temp files
 Avocent/
 java.security
+java.policy
 viewer.jnlp
 viewer.html
+libconnect.jar
+library_admin.html

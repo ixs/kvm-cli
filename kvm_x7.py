@@ -95,7 +95,7 @@ for jar in jars:
         headers={"Referer": "https://%s/title_app.asp" % (host,)},
     )
     assert len(r.text) > 0
-    with open(jar, "w") as f:
+    with open(jar, "wb") as f:
         f.write(r.content)
 
 # Write out temporary weak java security settings. Just to make sure we're not breaking on old KVM viewers
