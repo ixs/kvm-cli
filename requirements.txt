@@ -1,4 +1,4 @@
-PyCrypto
+PyCryptodome
 bs4
 requests
 python-simplexml
